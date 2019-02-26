@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+
+    <com.github.florent37.shapeofview.shapes.RoundRectView
+        android:id="@+id/view_loading"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="90dp"
+        android:background="#D1ECFF"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shape_roundRect_borderColor="#D1ECFF"
+        app:shape_roundRect_borderWidth="1dp"
+        app:shape_roundRect_bottomLeftRadius="6dp"
+        app:shape_roundRect_bottomRightRadius="6dp"
+        app:shape_roundRect_topLeftRadius="6dp"
+        app:shape_roundRect_topRightRadius="6dp"
+        android:layout_alignParentRight="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#D1ECFF"
+            android:gravity="center"
+            android:paddingBottom="12dp"
+            android:paddingEnd="20dp"
+            android:paddingStart="22dp"
+            android:paddingTop="12dp"
+            android:paddingLeft="22dp"
+            android:paddingRight="20dp">
+
+            <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+            <com.ivankocijan.magicviews.views.MagicTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Đang tải dữ liệu"
+                android:textColor="#73809B"
+                app:typeFace="HelveticaNeue_Regular.otf"
+                android:textSize="14sp"
+                android:layout_marginLeft="16dp" />
+        </LinearLayout>
+    </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+</android.support.constraint.ConstraintLayout>

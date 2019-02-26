@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_tutorial"
+    tools:context=".tutorial.TutorialActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_alignParentTop="true">
+        <ImageView
+            android:id="@+id/iv_Back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="16dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_back"/>
+        <com.ivankocijan.magicviews.views.MagicTextView
+            android:id="@+id/tv_Title_ActionBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hướng dẫn sử dụng"
+            android:layout_centerInParent="true"
+            android:textColor="#1C2D51"
+            android:textSize="18sp"
+            app:typeFace="HelveticaNeue_Medium.otf" />
+    </RelativeLayout>
+
+    <android.support.v4.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="?actionBarSize"
+            android:layout_marginBottom="?actionBarSize">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:orientation="vertical">
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_icon_pino"/>
+            <com.ivankocijan.magicviews.views.MagicTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="PINO"
+                    android:layout_gravity="center"
+                    android:textColor="#223254"
+                    android:textSize="18sp"
+                    app:typeFace="HelveticaNeue_Medium.otf"/>
+            <com.ivankocijan.magicviews.views.MagicTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Ứng dụng giáo dục điện tử"
+                    android:layout_gravity="center"
+                    android:textColor="#223254"
+                    android:textSize="14sp"
+                    app:typeFace="HelveticaNeue_Light.otf"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="36dp"
+                    android:orientation="vertical">
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_neo"/>
+                    <com.ivankocijan.magicviews.views.MagicTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Giới thiệu"
+                            android:textAllCaps="true"
+                            android:layout_marginLeft="12dp"
+                            android:layout_gravity="center"
+                            android:textColor="#223254"
+                            android:textSize="16sp"
+                            app:typeFace="HelveticaNeue_Medium.otf"/>
+                </LinearLayout>
+                <com.ivankocijan.magicviews.views.MagicTextView
+                        android:id="@+id/tvIntro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text=""
+                        android:textColor="#223254"
+                        android:textSize="14sp"
+                        app:typeFace="HelveticaNeue_Light.otf"/>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_neo"/>
+                    <com.ivankocijan.magicviews.views.MagicTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hướng dẫn sử dụng"
+                            android:textAllCaps="true"
+                            android:layout_marginLeft="12dp"
+                            android:layout_gravity="center"
+                            android:textColor="#223254"
+                            android:textSize="16sp"
+                            app:typeFace="HelveticaNeue_Medium.otf"/>
+                </LinearLayout>
+                <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rcl_tutorial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="6dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:id="@+id/llGroupSupport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <com.ivankocijan.magicviews.views.MagicTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nhóm hỗ trợ"
+                android:textColor="#73809B"
+                android:textSize="12sp"
+                app:typeFace="HelveticaNeue_Regular.otf" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:src="@drawable/ic_fb" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llCallSupport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <com.ivankocijan.magicviews.views.MagicTextView
+                android:id="@+id/tutorial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tổng đài hỗ trợ"
+                android:textColor="#73809B"
+                android:textSize="12sp"
+                app:typeFace="HelveticaNeue_Regular.otf" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:src="@drawable/ic_phone_sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
