@@ -7,20 +7,36 @@ import android.net.Uri
 import android.os.AsyncTask
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.telecom.Call
 import com.example.loginpino.AppUtil
 import com.example.loginpino.utils.DialogLoading
 import com.github.barteksc.pdfviewer.PDFView
 import com.tbruyelle.rxpermissions2.RxPermissions
+import io.reactivex.Observable
+import io.reactivex.ObservableEmitter
+import io.reactivex.ObservableOnSubscribe
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.schedulers.Schedulers
 import java.io.File
+import java.util.*
+import org.reactivestreams.Subscriber
+import java.io.IOException
+
+
+
 
 class PdfViewActivity : AppCompatActivity() {
 
-    lateinit var mDialogLoading: DialogLoading
-    internal var title: String? = ""
-    internal lateinit var pdfFolder: File
-    internal lateinit var pdfView: PDFView
-    internal var link: String? = ""
-    internal lateinit var outputFile: File
+    private lateinit var mDialogLoading: DialogLoading
+    private  var title: String? = ""
+    private lateinit var pdfFolder: File
+    private lateinit var pdfView: PDFView
+    private var link: String? = ""
+    private lateinit var outputFile: File
+    private var disposable: CompositeDisposable = CompositeDisposable()
+    private var pdfViewActivity: PdfActivityViewModel = PdfActivityViewModel()
+
 
     fun startActivity(activity: Activity, title: String, link: String) {
         val intent = Intent(activity, PdfViewActivity::class.java)
@@ -47,6 +63,7 @@ class PdfViewActivity : AppCompatActivity() {
             })
     }
 
+
     private fun openPdfDocument(file: File) {
         pdfView.fromUri(Uri.fromFile(file))
                 .load()
@@ -57,7 +74,22 @@ class PdfViewActivity : AppCompatActivity() {
         return nameLink[nameLink.size - 1]
     }
 
-
+    private fun requestAndroidVersion() {
+        pdfViewActivity.downloadFile()
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeOn(Schedulers.io())
+            .subscribe(
+                //cú pháp của rxjava trong kotlin
+                { result ->
+                    //request thành công
+                    handleSuccessAndroidVersion(result)
+                },
+                { error ->
+                    //request thất bai
+                    handlerErrorAndroidVersion(error)
+                }
+            )
+    }
 
     override fun onDestroy() {
         super.onDestroy()
