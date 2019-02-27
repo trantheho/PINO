@@ -21,15 +21,15 @@
                 android:layout_gravity="center"
                 android:src="@drawable/ic_back"
             android:layout_alignParentLeft="true" />
+
         <com.ivankocijan.magicviews.views.MagicTextView
-                android:id="@+id/tv_Title_ActionBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:layout_centerInParent="true"
-                android:textColor="#1C2D51"
-                android:textSize="18sp"
-                app:typeFace="HelveticaNeue_Medium.otf" />
+            android:id="@+id/PDF_tittle_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#1C2D51"
+            android:textSize="18sp"
+            app:typeFace="HelveticaNeue_Medium.otf" />
     </RelativeLayout>
     <LinearLayout
             android:layout_width="match_parent"

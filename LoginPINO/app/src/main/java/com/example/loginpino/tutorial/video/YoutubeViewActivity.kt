@@ -1,4 +1,6 @@
 package com.example.loginpino.tutorial.video
 
-class YoutubeViewActivity {
+import android.support.v7.app.AppCompatActivity
+
+class YoutubeViewActivity: AppCompatActivity() {
 }

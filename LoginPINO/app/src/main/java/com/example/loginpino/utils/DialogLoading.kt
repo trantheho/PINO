@@ -5,12 +5,15 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
+import android.view.View
 import com.blankj.utilcode.util.ScreenUtils
 import com.example.loginpino.R
+import com.github.florent37.shapeofview.shapes.RoundRectView
 
 class DialogLoading {
 
-    private lateinit var mDialog: Dialog
+    lateinit var mDialog: Dialog
+    val mViewLoading: RoundRectView? = null
 
     fun DialogLoading(mContext: Context){
         val width: Int = ScreenUtils.getScreenWidth()
@@ -26,6 +29,23 @@ class DialogLoading {
         mDialog.setCanceledOnTouchOutside(false)
         mDialog.setCancelable(false)
 
+    }
+
+    fun show() {
+        if (mDialog != null) {
+            if (mViewLoading != null) {
+                mViewLoading.setVisibility(View.VISIBLE)
+                mViewLoading.setAlpha(0f)
+                mViewLoading.setScaleX(0f)
+                mViewLoading.setScaleY(0f)
+                mViewLoading.animate()
+                    .alpha(1f)
+                    .scaleX(1f).scaleY(1f)
+                    .setDuration(350)
+                    .start()
+            }
+            mDialog.show()
+        }
     }
 
     fun dismiss() {

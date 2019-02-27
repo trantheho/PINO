@@ -1,4 +1,4 @@
-package com.example.loginpino
+package com.example.loginpino.utils
 
 import android.content.Context
 import android.content.res.Resources
@@ -12,6 +12,7 @@ import android.text.TextUtils
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
+import com.example.loginpino.Myapp
 
 class AppUtil private constructor() {
 

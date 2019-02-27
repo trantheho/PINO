@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.text.Html
+import android.util.Log
+import android.widget.Toast
 import com.example.loginpino.Myapp
 import com.example.loginpino.R
 import com.example.loginpino.tutorial.adapter.TutorialAdapter
@@ -47,7 +49,7 @@ class TutorialActivity : AppCompatActivity() {
         rcl_tutorial.adapter = adapter
         adapter.onClick(object : TutorialAdapterListener {
             override fun onClickNormal(position: Int) {
-                pdfViewActivity.startActivity(this@TutorialActivity, items.get(position).title.toString(), items.get(position).link.toString()  )
+                pdfViewActivity.startActivity(this@TutorialActivity, items.get(position).title.toString(), items.get(position).link.toString())
             }
 
             override fun onClickVideo(position: Int) {
@@ -61,15 +63,11 @@ class TutorialActivity : AppCompatActivity() {
 
      private fun initTutorialItem() {
          items = ArrayList<TutorialItem>()
-        (items as ArrayList<TutorialItem>).add(TutorialItem("Chức năng mới", "Bảo vệ tài khoản, quên mật khẩu…", R.drawable.ic_newversion, "http://appstore.nhatcuong.vn/PINO/Guid/moi.pdf"))
+        (items as ArrayList<TutorialItem>).add(TutorialItem("Chức năng mới", "Bảo vệ tài khoản, quên mật khẩu…", R.drawable.ic_newversion, "https://raw.githubusercontent.com/huyqv/assets/master/images/01.jpg"))
         (items as ArrayList<TutorialItem>).add(TutorialItem("Các vấn đề tài khoản", "Bảo vệ tài khoản, quên mật khẩu…", R.drawable.ic_account, "http://appstore.nhatcuong.vn/PINO/Guid/taikhoan.pdf"))
         (items as ArrayList<TutorialItem>).add(TutorialItem("Sử dụng ứng dụng", "Cách dùng chức năng", R.drawable.ic_user_app, "http://appstore.nhatcuong.vn/PINO/Guid/chucnang.pdf"))
         (items as ArrayList<TutorialItem>).add(TutorialItem("Chức năng ví", "Giúp thanh toán nhanh các khoản phí", R.drawable.ic_taovi, "http://appstore.nhatcuong.vn/PINO/Guid/vi.pdf"))
         (items as ArrayList<TutorialItem>).add(TutorialItem("Video hướng dẫn", "Hướng dẫn sử dụng bằng video", R.drawable.ic_youtube))
     }
 
-//    override fun innitRecycleView()
-//    {
-//
-//    }
 }
