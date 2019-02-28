@@ -46,7 +46,9 @@ class MainActivity : AppCompatActivity() {
         val disposable = RxPermissions(this).request(Manifest.permission.CALL_PHONE)
                 .subscribe { granted ->
                     if (granted!!) {
-                        onCall()
+                        val callIntent = Intent(Intent.ACTION_CALL)
+                        callIntent.data = Uri.parse("tel:0358562648")
+                        startActivity(callIntent)
                     }
                 }
         compositeDisposable.add(disposable)
