@@ -28,6 +28,7 @@
         </activity>
         <activity android:name=".tutorial.TutorialActivity"/>
         <activity android:name=".tutorial.pdf.PdfViewActivity"/>
+        <activity android:name=".tutorial.video.YoutubeViewActivity"/>
     </application>
 
 </manifest>

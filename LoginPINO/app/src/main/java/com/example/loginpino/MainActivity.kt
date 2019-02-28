@@ -24,6 +24,14 @@ class MainActivity : AppCompatActivity() {
             routeToTutorialActivity()
         }
 
+        btnfb.setOnClickListener{
+            onNavigateFacebook()
+        }
+
+        btncall.setOnClickListener{
+            onCall()
+        }
+
 
 
     }
@@ -45,14 +53,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onNavigateFacebook() {
+        val  url = "https://www.facebook.com/groups/248531216020755/"
         try {
             val appInfo = packageManager.getApplicationInfo("com.facebook.katana", 0)
             if (appInfo.enabled) {
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/fb://profile/248531216020755/"))
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("fb://facewebmodal/f?href=" + url))
                 ActivityUtils.startActivity(intent)
             }
         } catch (ignored: Exception) {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/groups/248531216020755/"))
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
             ActivityUtils.startActivity(intent)
         }
 

@@ -63,7 +63,7 @@ class TutorialActivity : AppCompatActivity() {
 
      private fun initTutorialItem() {
          items = ArrayList<TutorialItem>()
-        (items as ArrayList<TutorialItem>).add(TutorialItem("Chức năng mới", "Bảo vệ tài khoản, quên mật khẩu…", R.drawable.ic_newversion, "https://raw.githubusercontent.com/huyqv/assets/master/images/01.jpg"))
+        (items as ArrayList<TutorialItem>).add(TutorialItem("Chức năng mới", "Bảo vệ tài khoản, quên mật khẩu…", R.drawable.ic_newversion, "http://gahp.net/wp-content/uploads/2017/09/sample.pdf"))
         (items as ArrayList<TutorialItem>).add(TutorialItem("Các vấn đề tài khoản", "Bảo vệ tài khoản, quên mật khẩu…", R.drawable.ic_account, "http://appstore.nhatcuong.vn/PINO/Guid/taikhoan.pdf"))
         (items as ArrayList<TutorialItem>).add(TutorialItem("Sử dụng ứng dụng", "Cách dùng chức năng", R.drawable.ic_user_app, "http://appstore.nhatcuong.vn/PINO/Guid/chucnang.pdf"))
         (items as ArrayList<TutorialItem>).add(TutorialItem("Chức năng ví", "Giúp thanh toán nhanh các khoản phí", R.drawable.ic_taovi, "http://appstore.nhatcuong.vn/PINO/Guid/vi.pdf"))
