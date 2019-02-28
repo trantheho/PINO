@@ -8,4 +8,5 @@ import retrofit2.http.Url
 interface ApiTutorial {
 
     fun downloadFile(@Url url : String) : Call<ResponseBody>
+
 }
